@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Task List</h1>
+    <p>Current date and time: {{ current_date|date:"F d, Y H:i" }} </p>
+    {% if tasks %}
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks available.</p>
+{% endif %}
+
+{% endblock %}
